@@ -8,11 +8,49 @@
 
 
 #import <Foundation/Foundation.h>
-#import "userModel.h"
+#import "MTLModel+NSCoding.h"
+
+@interface userModel : MTLModel
+//用户模型相关都在这实现实现添加
+@property (nonatomic,copy)NSString *username;
+@property (nonatomic,copy)NSString *password;
+@property (nonatomic,copy)NSString *session_id;//登录获取的session_id
+
+@end
+
+/*
+ *
+ *          ┌─┐       ┌─┐
+ *       ┌──┘ ┴───────┘ ┴──┐
+ *       │                 │
+ *       │       ───       │
+ *       │  ─┬┘       └┬─  │
+ *       │                 │
+ *       │       ─┴─       │
+ *       │                 │
+ *       └───┐         ┌───┘
+ *           │         │
+ *           │         │
+ *           │         │
+ *           │         └──────────────┐
+ *           │                        │
+ *           │                        ├─┐
+ *           │                        ┌─┘
+ *           │                        │
+ *           └─┐  ┐  ┌───────┬──┐  ┌──┘
+ *             │ ─┤ ─┤       │ ─┤ ─┤
+ *             └──┴──┘       └──┴──┘
+ *                 神兽保佑
+ *                 代码无BUG!
+ */
 
 @interface userManager : NSObject
+/*
+  单例构造
+ */
 + (instancetype)shareManager;
-
+//取出本地用户模型
 -(userModel *)userModel;
+//更新单例及用户模型
 -(void)setModel:(userModel *)usermodel;
 @end

@@ -11,17 +11,42 @@
 #import "MJRefresh.h"
 #import "configHead.h"
 #import "userManager.h"
+#import "errorPageView.h"
 @interface ASQMyShopVC ()<WKNavigationDelegate,UIScrollViewDelegate,WKUIDelegate,WKScriptMessageHandler>//WKScriptMessageHandler  JS与OC交互的协议
+{
+    UIActivityIndicatorView *_myactiveView;
+    NSURLRequest            *_currentRequest;
+
+}
+
 @property (nonatomic , strong)WKWebView       * Wwebview ;
 @property (nonatomic , strong)UIProgressView  * progressview;
 @property (nonatomic , strong)UIBarButtonItem * closeItem;
 @property (nonatomic , strong)UIBarButtonItem * backItem;
 @property (nonatomic , copy  )NSString        * sessionID;
-
+@property (nonatomic , strong)UIActivityIndicatorView *activeView;
 
 @end
 
 @implementation ASQMyShopVC
+- (UIActivityIndicatorView *)activeView{
+
+    if (!_activeView) {
+        CGRect rect;
+        
+        rect.origin = CGPointMake((SCREENWIDTH-50)/2, (SCREENHIGHT-100)/2);
+        rect.size   = CGSizeMake(50, 50);
+        _activeView = [[UIActivityIndicatorView alloc] initWithFrame:rect];
+        _activeView.hidden = YES;
+        _activeView.hidesWhenStopped = YES;
+        _activeView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        _activeView.transform = CGAffineTransformMakeScale(2, 2);
+        [self.view addSubview:_activeView];
+        
+    }
+    return _activeView;
+}
+
 - (WKWebView *)Wwebview
 {
     if (!_Wwebview) {
@@ -138,8 +163,6 @@
         
         [self.Wwebview loadRequest:baidurequset];
         
-        
-        
     }];
     
     if (self.Wwebview) {
@@ -184,6 +207,7 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     
+    [self.activeView stopAnimating];
     [webView evaluateJavaScript:@"document.documentElement.getElementsByClassName('mui-bar mui-bar-tab')[0].style.display = 'none'" completionHandler:^(id _Nullable lable, NSError * _Nullable error) {
         
     }];
@@ -211,6 +235,11 @@
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
+    [errorPageView showinView:self.view andbuttonBlock:^{
+        //失败后按重新加载
+        [self.Wwebview loadRequest:_currentRequest];
+    }];
+    [self.activeView stopAnimating];
     if (self.Wwebview.scrollView.mj_header) {
         [self.Wwebview.scrollView.mj_header endRefreshing];
     }
@@ -236,7 +265,12 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-//        
+//
+    _currentRequest = navigationAction.request;//记录当前的请求
+    
+    self.activeView.hidden = NO;
+    [self.activeView startAnimating];
+    
         NSString * webURL = [NSString stringWithFormat:@"%@",navigationAction.request.URL];
         
         NSLog(@"URL:%@",webURL);

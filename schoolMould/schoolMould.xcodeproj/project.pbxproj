@@ -64,6 +64,8 @@
 		A8B3BDAB1E4DCB4E00861B81 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA21E4DCB4E00861B81 /* SDCycleScrollView.m */; };
 		A8B3BDAC1E4DCB4E00861B81 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */; };
 		A8B3BDAF1E4DCB7E00861B81 /* WebViewComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */; };
+		A8C80EE31E52D99200251E49 /* errorPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C80EE21E52D99200251E49 /* errorPageView.m */; };
+		A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE41E52E08300251E49 /* errorIMG.png */; };
 		A8F7A6391E499D8D00C18A14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6381E499D8D00C18A14 /* main.m */; };
 		A8F7A63C1E499D8E00C18A14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63B1E499D8E00C18A14 /* AppDelegate.m */; };
 		A8F7A63F1E499D8E00C18A14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63E1E499D8E00C18A14 /* ViewController.m */; };
@@ -98,7 +100,6 @@
 		A8F7A6BD1E49A19200C18A14 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6A61E49A19200C18A14 /* UIScrollView+MJRefresh.m */; };
 		A8F7A6BE1E49A19200C18A14 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6A81E49A19200C18A14 /* UIView+MJExtension.m */; };
 		A8F7A6BF1E49A19200C18A14 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6A91E49A19200C18A14 /* README.md */; };
-		A8F7A6C21E49A6F100C18A14 /* userModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6C11E49A6F100C18A14 /* userModel.m */; };
 		A8F7A6C51E49A75700C18A14 /* userManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6C41E49A75700C18A14 /* userManager.m */; };
 		AACC547E7E72851D3B6C5CF9 /* Pods_schoolMould.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3332B4E12A17001A5C07ABD /* Pods_schoolMould.framework */; };
 /* End PBXBuildFile section */
@@ -230,6 +231,9 @@
 		A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		A8B3BDAD1E4DCB7E00861B81 /* WebViewComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewComponent.h; sourceTree = "<group>"; };
 		A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewComponent.m; sourceTree = "<group>"; };
+		A8C80EE11E52D99200251E49 /* errorPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorPageView.h; sourceTree = "<group>"; };
+		A8C80EE21E52D99200251E49 /* errorPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = errorPageView.m; sourceTree = "<group>"; };
+		A8C80EE41E52E08300251E49 /* errorIMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errorIMG.png; sourceTree = "<group>"; };
 		A8F7A6341E499D8D00C18A14 /* schoolMould.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schoolMould.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F7A6381E499D8D00C18A14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F7A63A1E499D8D00C18A14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -297,8 +301,6 @@
 		A8F7A6A71E49A19200C18A14 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		A8F7A6A81E49A19200C18A14 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		A8F7A6A91E49A19200C18A14 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A8F7A6C01E49A6F100C18A14 /* userModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userModel.h; sourceTree = "<group>"; };
-		A8F7A6C11E49A6F100C18A14 /* userModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userModel.m; sourceTree = "<group>"; };
 		A8F7A6C31E49A75700C18A14 /* userManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userManager.h; sourceTree = "<group>"; };
 		A8F7A6C41E49A75700C18A14 /* userManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userManager.m; sourceTree = "<group>"; };
 		D3332B4E12A17001A5C07ABD /* Pods_schoolMould.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_schoolMould.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,6 +407,7 @@
 				A823B26C1E51407200EE4FE5 /* maintab_sun_click@2x.png */,
 				A823B26D1E51407200EE4FE5 /* maintab_sun@2x.png */,
 				A823B2771E5157FA00EE4FE5 /* toppage.jpg */,
+				A8C80EE41E52E08300251E49 /* errorIMG.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -528,9 +531,9 @@
 				A8B3BD3C1E4D5E5600861B81 /* image */,
 				A8F7A6701E499DFD00C18A14 /* vendor */,
 				A8F7A6741E49A0BE00C18A14 /* configHead.h */,
+				A8C80EE11E52D99200251E49 /* errorPageView.h */,
+				A8C80EE21E52D99200251E49 /* errorPageView.m */,
 				A823B2761E514B5E00EE4FE5 /* interface.h */,
-				A8F7A6C01E49A6F100C18A14 /* userModel.h */,
-				A8F7A6C11E49A6F100C18A14 /* userModel.m */,
 				A8F7A6C31E49A75700C18A14 /* userManager.h */,
 				A8F7A6C41E49A75700C18A14 /* userManager.m */,
 				A8F7A66A1E499DC600C18A14 /* GuideViewController.h */,
@@ -829,6 +832,7 @@
 				A8B3BD421E4D6F4200861B81 /* username_pro@2x.png in Resources */,
 				A8F7A6AA1E49A19200C18A14 /* LICENSE in Resources */,
 				A823B2701E51407200EE4FE5 /* maintab_sun_click@2x.png in Resources */,
+				A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */,
 				A8B3BD541E4DC1DB00861B81 /* keyWord.plist in Resources */,
 				A8B3BD401E4D6DE200861B81 /* personal.png in Resources */,
 				A8B3BD4A1E4D7F2500861B81 /* IQButtonBarArrowLeft@2x.png in Resources */,
@@ -930,6 +934,7 @@
 				A8B3BD921E4DCAB300861B81 /* UIView+WebCacheOperation.m in Sources */,
 				A8B3BDA51E4DCB4E00861B81 /* NSData+SDDataCache.m in Sources */,
 				A8F7A6B11E49A19200C18A14 /* MJRefreshAutoNormalFooter.m in Sources */,
+				A8C80EE31E52D99200251E49 /* errorPageView.m in Sources */,
 				A8B3BD871E4DCAB300861B81 /* SDWebImageDecoder.m in Sources */,
 				A8F7A6B51E49A19200C18A14 /* MJRefreshBackStateFooter.m in Sources */,
 				A823B29C1E515EDC00EE4FE5 /* MTLJSONAdapter.m in Sources */,
@@ -944,7 +949,6 @@
 				A823B29A1E515EDC00EE4FE5 /* EXTRuntimeExtensions.m in Sources */,
 				A8B3BDAA1E4DCB4E00861B81 /* SDCollectionViewCell.m in Sources */,
 				A8B3BD8D1E4DCAB300861B81 /* UIImage+GIF.m in Sources */,
-				A8F7A6C21E49A6F100C18A14 /* userModel.m in Sources */,
 				A8B3BDAF1E4DCB7E00861B81 /* WebViewComponent.m in Sources */,
 				A8F7A6BD1E49A19200C18A14 /* UIScrollView+MJRefresh.m in Sources */,
 				A8B3BD851E4DCAB300861B81 /* SDImageCache.m in Sources */,

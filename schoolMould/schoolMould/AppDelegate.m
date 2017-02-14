@@ -36,12 +36,14 @@
     id obj =  [[NSUserDefaults standardUserDefaults] objectForKey:IS_LOAD];
     
     if (obj) {
+        /*
         //创造随机进入导航页面的数字
         int a = arc4random()%1;
         if (a==0) {
             [self guide];
             return YES;
         }
+         */
         
         userModel *model = [[userManager shareManager] userModel];
         

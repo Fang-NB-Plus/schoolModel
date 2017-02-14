@@ -42,5 +42,10 @@
     return _userModel;
 }
 
+@end
+
+@implementation userModel
+
+
 
 @end
