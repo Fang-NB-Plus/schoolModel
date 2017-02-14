@@ -1,0 +1,12 @@
+platform :ios, ‘9.0’
+use_frameworks!
+
+target 'schoolMould' do
+
+pod 'SDAutoLayout', '~> 2.1.2'
+pod 'AFNetworking', '~> 3.0'
+pod 'MJRefresh', '~> 3.1.10'
+pod 'Masonry'
+pod 'MBProgressHUD', '~> 1.0.0'
+
+end

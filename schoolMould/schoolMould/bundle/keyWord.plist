@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>secondName</key>
+	<string>生活应用</string>
+	<key>indexName</key>
+	<string>校园管理</string>
+	<key>schoolName</key>
+	<string>广西经济干部学院</string>
+</dict>
+</plist>
