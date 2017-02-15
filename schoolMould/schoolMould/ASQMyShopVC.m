@@ -20,6 +20,7 @@
 }
 
 @property (nonatomic , strong)WKWebView       * Wwebview ;
+@property (nonatomic , strong)UIBarButtonItem * rightItem;
 @property (nonatomic , strong)UIProgressView  * progressview;
 @property (nonatomic , strong)UIBarButtonItem * closeItem;
 @property (nonatomic , strong)UIBarButtonItem * backItem;
@@ -34,7 +35,7 @@
     if (!_activeView) {
         CGRect rect;
         
-        rect.origin = CGPointMake((SCREENWIDTH-50)/2, (SCREENHIGHT-100)/2);
+        rect.origin = CGPointMake((SCREENWIDTH-50)/2, (SCREENHIGHT-170)/2);
         rect.size   = CGSizeMake(50, 50);
         _activeView = [[UIActivityIndicatorView alloc] initWithFrame:rect];
         _activeView.hidden = YES;
@@ -46,7 +47,19 @@
     }
     return _activeView;
 }
+-(UIBarButtonItem *)rightItem{
+    if (!_rightItem) {
+        
+        UIButton *cancelbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [cancelbtn setBackgroundImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+        cancelbtn.tag = 3000;
+        [cancelbtn addTarget:self action:@selector(stopLoading:) forControlEvents:UIControlEventTouchUpInside];
+        _rightItem = [[UIBarButtonItem alloc] initWithCustomView:cancelbtn];
+        
+    }
+    return _rightItem;
 
+}
 - (WKWebView *)Wwebview
 {
     if (!_Wwebview) {
@@ -160,6 +173,7 @@
         
         NSMutableURLRequest *baidurequset = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.urlString]];
         NSLog(@"加载sessionid:===%@",self.urlString);
+        baidurequset.timeoutInterval = 5;
         
         [self.Wwebview loadRequest:baidurequset];
         
@@ -188,7 +202,7 @@
 
         NSMutableURLRequest *baidurequset = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.urlString]];
         NSLog(@"H5url:===%@",self.urlString);
-        
+
         [self.Wwebview loadRequest:baidurequset];
         
         //[self.Wwebview loadHTMLString:[self readLocalHtmlString] baseURL:nil];
@@ -201,12 +215,31 @@
     self.Wwebview.userInteractionEnabled = YES;
     
 }
+- (void)stopLoading:(UIButton *)item{
+    
+    if (item.tag == 3000) {
+        item.tag = 2000;
+        [item setBackgroundImage:[UIImage imageNamed:@"reclick"] forState:UIControlStateNormal];
+        [self.activeView stopAnimating];
+        [self.Wwebview stopLoading];
+        if (self.Wwebview.scrollView.mj_header) {
+            [self.Wwebview.scrollView.mj_header endRefreshing];
+        }
+    }else{
+        item.tag = 3000;
+        [item setBackgroundImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+        [self.Wwebview loadRequest:_currentRequest];
+    
+    }
+
+
+}
 #pragma mark - WKNavigationDelegate
 
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    
+    self.navigationItem.rightBarButtonItem = nil;
     [self.activeView stopAnimating];
     [webView evaluateJavaScript:@"document.documentElement.getElementsByClassName('mui-bar mui-bar-tab')[0].style.display = 'none'" completionHandler:^(id _Nullable lable, NSError * _Nullable error) {
         
@@ -235,6 +268,7 @@
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
+    
     [errorPageView showinView:self.view andbuttonBlock:^{
         //失败后按重新加载
         [self.Wwebview loadRequest:_currentRequest];
@@ -267,9 +301,9 @@
 {
 //
     _currentRequest = navigationAction.request;//记录当前的请求
-    
     self.activeView.hidden = NO;
     [self.activeView startAnimating];
+    self.navigationItem.rightBarButtonItem = self.rightItem;//请求开始右上角会出现取消按钮
     
         NSString * webURL = [NSString stringWithFormat:@"%@",navigationAction.request.URL];
         
@@ -277,7 +311,7 @@
         if ([webURL containsString:@"tel:"]) {
             
             [[UIApplication sharedApplication]openURL:[NSURL URLWithString:webURL] options:@{@"tel":@"num"} completionHandler:^(BOOL success) {
-                
+                [self.activeView stopAnimating];
             }];
             
             decisionHandler(WKNavigationActionPolicyCancel);
@@ -445,7 +479,6 @@
 {
     self.Wwebview.scrollView.delegate  = nil;
     [self.Wwebview removeObserver:self forKeyPath:@"estimatedProgress"];
-   
     [self.Wwebview removeObserver:self forKeyPath:@"canGoBack"];
     [self.Wwebview removeFromSuperview];
     self.Wwebview = nil;

@@ -66,6 +66,8 @@
 		A8B3BDAF1E4DCB7E00861B81 /* WebViewComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */; };
 		A8C80EE31E52D99200251E49 /* errorPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C80EE21E52D99200251E49 /* errorPageView.m */; };
 		A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE41E52E08300251E49 /* errorIMG.png */; };
+		A8C80EE71E52F58200251E49 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE61E52F58200251E49 /* stop.png */; };
+		A8C80EE91E52F58B00251E49 /* reclick.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE81E52F58B00251E49 /* reclick.png */; };
 		A8F7A6391E499D8D00C18A14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6381E499D8D00C18A14 /* main.m */; };
 		A8F7A63C1E499D8E00C18A14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63B1E499D8E00C18A14 /* AppDelegate.m */; };
 		A8F7A63F1E499D8E00C18A14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63E1E499D8E00C18A14 /* ViewController.m */; };
@@ -234,6 +236,8 @@
 		A8C80EE11E52D99200251E49 /* errorPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorPageView.h; sourceTree = "<group>"; };
 		A8C80EE21E52D99200251E49 /* errorPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = errorPageView.m; sourceTree = "<group>"; };
 		A8C80EE41E52E08300251E49 /* errorIMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errorIMG.png; sourceTree = "<group>"; };
+		A8C80EE61E52F58200251E49 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		A8C80EE81E52F58B00251E49 /* reclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reclick.png; sourceTree = "<group>"; };
 		A8F7A6341E499D8D00C18A14 /* schoolMould.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schoolMould.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F7A6381E499D8D00C18A14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F7A63A1E499D8D00C18A14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -408,6 +412,8 @@
 				A823B26D1E51407200EE4FE5 /* maintab_sun@2x.png */,
 				A823B2771E5157FA00EE4FE5 /* toppage.jpg */,
 				A8C80EE41E52E08300251E49 /* errorIMG.png */,
+				A8C80EE61E52F58200251E49 /* stop.png */,
+				A8C80EE81E52F58B00251E49 /* reclick.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -829,9 +835,11 @@
 				A8B3BD441E4D7DFB00861B81 /* 启动页.png in Resources */,
 				A823B2711E51407200EE4FE5 /* maintab_sun@2x.png in Resources */,
 				A8B3BD3F1E4D6DE200861B81 /* password_pro@2x.png in Resources */,
+				A8C80EE71E52F58200251E49 /* stop.png in Resources */,
 				A8B3BD421E4D6F4200861B81 /* username_pro@2x.png in Resources */,
 				A8F7A6AA1E49A19200C18A14 /* LICENSE in Resources */,
 				A823B2701E51407200EE4FE5 /* maintab_sun_click@2x.png in Resources */,
+				A8C80EE91E52F58B00251E49 /* reclick.png in Resources */,
 				A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */,
 				A8B3BD541E4DC1DB00861B81 /* keyWord.plist in Resources */,
 				A8B3BD401E4D6DE200861B81 /* personal.png in Resources */,

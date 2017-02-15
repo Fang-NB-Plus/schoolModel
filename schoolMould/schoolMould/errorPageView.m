@@ -21,6 +21,7 @@
     
     errorView = [[errorPageView alloc] initWithFrame:view.bounds];
     errorView.buttonBlock = block;
+    errorView.backgroundColor = [UIColor whiteColor];
     if (errorView) {
         [errorView setView];
         [view addSubview:errorView];
