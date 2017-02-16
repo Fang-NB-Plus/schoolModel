@@ -47,6 +47,8 @@
     
     self.viewControllers = @[nav1,nav2];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

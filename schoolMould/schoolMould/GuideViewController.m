@@ -29,21 +29,23 @@
     for (int i = 0; i<4; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
         
-        int a =arc4random()%255;
-        int b =arc4random()%255;
-        int c =arc4random()%255;
-        imageView.backgroundColor = [UIColor colorWithDisplayP3Red:a/255.0 green:b/255.0 blue:c/255.0 alpha:1];
         
         imageView.frame = CGRectMake(i*SCREENWIDTH, 0, SCREENWIDTH, SCREENHIGHT);
-        
+        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"guidepage%d",i+1]];
         [_bgScrol addSubview:imageView];
         if (i==3) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake((SCREENWIDTH-100)/2, SCREENHIGHT-200, 100, 50);
+            btn.frame = CGRectMake((SCREENWIDTH-150)/2, SCREENHIGHT-130, 150, 50);
+            btn.backgroundColor = [UIColor blueColor];
+            btn.titleLabel.font = [UIFont systemFontOfSize:20];
             
-            [btn setTitle:@"进入app" forState:UIControlStateNormal];
-            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [btn setTitle:@"立即体验" forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(jumplogin) forControlEvents:UIControlEventTouchUpInside];
+            
+            btn.layer.cornerRadius  = 5;
+            btn.layer.masksToBounds = YES;
+            
             [imageView addSubview:btn];
             imageView.userInteractionEnabled = YES;
         }

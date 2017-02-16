@@ -45,13 +45,13 @@ typedef void(^myblock)(NSDictionary *);
 - (CGFloat)fontsize{
     CGFloat a;
     if (isiPhone6or6s) {
-        return 16;
+        return 14;
     }
     if (isiPhone5or5sor5c) {
-        return 15;
+        return 13;
     }
     if (isiPhone6plusor6splus) {
-        return 17;
+        return 15;
     }
     
     return a;

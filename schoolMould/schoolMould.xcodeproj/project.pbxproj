@@ -64,6 +64,10 @@
 		A8B3BDAB1E4DCB4E00861B81 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA21E4DCB4E00861B81 /* SDCycleScrollView.m */; };
 		A8B3BDAC1E4DCB4E00861B81 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */; };
 		A8B3BDAF1E4DCB7E00861B81 /* WebViewComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */; };
+		A8C5AC601E5595B700BAF4A4 /* guidepage1.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5C1E5595B700BAF4A4 /* guidepage1.png */; };
+		A8C5AC611E5595B700BAF4A4 /* guidepage2.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5D1E5595B700BAF4A4 /* guidepage2.png */; };
+		A8C5AC621E5595B700BAF4A4 /* guidepage3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5E1E5595B700BAF4A4 /* guidepage3.png */; };
+		A8C5AC631E5595B700BAF4A4 /* guidepage4.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5F1E5595B700BAF4A4 /* guidepage4.png */; };
 		A8C80EE31E52D99200251E49 /* errorPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C80EE21E52D99200251E49 /* errorPageView.m */; };
 		A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE41E52E08300251E49 /* errorIMG.png */; };
 		A8C80EE71E52F58200251E49 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE61E52F58200251E49 /* stop.png */; };
@@ -233,6 +237,10 @@
 		A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		A8B3BDAD1E4DCB7E00861B81 /* WebViewComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewComponent.h; sourceTree = "<group>"; };
 		A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewComponent.m; sourceTree = "<group>"; };
+		A8C5AC5C1E5595B700BAF4A4 /* guidepage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage1.png; sourceTree = "<group>"; };
+		A8C5AC5D1E5595B700BAF4A4 /* guidepage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage2.png; sourceTree = "<group>"; };
+		A8C5AC5E1E5595B700BAF4A4 /* guidepage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage3.png; sourceTree = "<group>"; };
+		A8C5AC5F1E5595B700BAF4A4 /* guidepage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage4.png; sourceTree = "<group>"; };
 		A8C80EE11E52D99200251E49 /* errorPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = errorPageView.h; sourceTree = "<group>"; };
 		A8C80EE21E52D99200251E49 /* errorPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = errorPageView.m; sourceTree = "<group>"; };
 		A8C80EE41E52E08300251E49 /* errorIMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errorIMG.png; sourceTree = "<group>"; };
@@ -414,6 +422,10 @@
 				A8C80EE41E52E08300251E49 /* errorIMG.png */,
 				A8C80EE61E52F58200251E49 /* stop.png */,
 				A8C80EE81E52F58B00251E49 /* reclick.png */,
+				A8C5AC5C1E5595B700BAF4A4 /* guidepage1.png */,
+				A8C5AC5D1E5595B700BAF4A4 /* guidepage2.png */,
+				A8C5AC5E1E5595B700BAF4A4 /* guidepage3.png */,
+				A8C5AC5F1E5595B700BAF4A4 /* guidepage4.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -836,8 +848,12 @@
 				A823B2711E51407200EE4FE5 /* maintab_sun@2x.png in Resources */,
 				A8B3BD3F1E4D6DE200861B81 /* password_pro@2x.png in Resources */,
 				A8C80EE71E52F58200251E49 /* stop.png in Resources */,
+				A8C5AC611E5595B700BAF4A4 /* guidepage2.png in Resources */,
 				A8B3BD421E4D6F4200861B81 /* username_pro@2x.png in Resources */,
+				A8C5AC631E5595B700BAF4A4 /* guidepage4.png in Resources */,
+				A8C5AC621E5595B700BAF4A4 /* guidepage3.png in Resources */,
 				A8F7A6AA1E49A19200C18A14 /* LICENSE in Resources */,
+				A8C5AC601E5595B700BAF4A4 /* guidepage1.png in Resources */,
 				A823B2701E51407200EE4FE5 /* maintab_sun_click@2x.png in Resources */,
 				A8C80EE91E52F58B00251E49 /* reclick.png in Resources */,
 				A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */,

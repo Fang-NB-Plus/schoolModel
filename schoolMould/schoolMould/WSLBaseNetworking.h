@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger,NetWorkMethod){
            @url: 路径
         @method: 请求方法
         @params: 参数
-      @autoshow: 是否自动显示错误
+      @autoshow: 是否自动显示错误 默认是YES
  @completeBlock: 请求完的回调，三个参数 
            data: 请求成功的返回参数(data,nil,YES)
           error: 连接上服务器但是参数错误(nil,error,YES)
