@@ -155,10 +155,12 @@
 }
 
 - (void)login{
+    NSString *path    = [[NSBundle mainBundle]pathForResource:@"keyWord" ofType:@"plist"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
     NSDictionary *params = @{@"username":_userTF.text,@"password":[self md5:_passwordTF.text]};
     [MBProgressHUD showHUDAddedTo:self.view animated:YES].label.text = @"正在登陆...";
-    [[WSLBaseNetworking shareManager] requstJSdatawithurl:LOGIN_URL method:Post paragram:params autoShowError:YES andCompleteBlock:^(id data, NSError *error, BOOL isConneted) {
+    [[WSLBaseNetworking shareManager] requstJSdatawithurl:dic[@"logurl"] method:Post paragram:params autoShowError:YES andCompleteBlock:^(id data, NSError *error, BOOL isConneted) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         if (!isConneted) {
@@ -186,8 +188,8 @@
     
     const char *cStr = [input UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
-    
+    CC_MD5(cStr, strlen(cStr), digest ); // This is the md5 call
+
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)

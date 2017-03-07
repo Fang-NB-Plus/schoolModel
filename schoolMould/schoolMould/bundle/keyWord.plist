@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>indexurl</key>
+	<string>http://jgy.nnwsl.com/index.php?s=/Wap/Index/index/session_id/</string>
+	<key>logurl</key>
+	<string>http://jgy.nnwsl.com/?s=/Wap/Act/login</string>
 	<key>secondName</key>
 	<string>生活应用</string>
 	<key>indexName</key>

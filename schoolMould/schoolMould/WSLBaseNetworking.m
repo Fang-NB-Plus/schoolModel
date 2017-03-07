@@ -155,7 +155,7 @@
 
 - (void)showErrorMsg:(NSString *)errorStr{
     
-    UIView *view = [[UIApplication sharedApplication] keyWindow].subviews.lastObject;
+    UIView *view = [[UIApplication sharedApplication] keyWindow];
     
     MBProgressHUD *MBhud;
     MBhud                 = [MBProgressHUD showHUDAddedTo:view animated:YES];

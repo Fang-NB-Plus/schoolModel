@@ -24,10 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSString *path    = [[NSBundle mainBundle]pathForResource:@"keyWord" ofType:@"plist"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     userModel *model = [[userManager shareManager] userModel];
     
     ASQMyShopVC *vc1 = [[ASQMyShopVC alloc] init];
-    NSString *urlstr = [INDEX_URL stringByAppendingString:model.session_id];
+    NSString *urlstr = [dic[@"indexurl"] stringByAppendingString:model.session_id];
     vc1.urlString = urlstr;
     
     BMViewController *vc2 = [[BMViewController alloc] init];

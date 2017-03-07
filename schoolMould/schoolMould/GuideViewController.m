@@ -36,7 +36,7 @@
         if (i==3) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake((SCREENWIDTH-150)/2, SCREENHIGHT-130, 150, 50);
-            btn.backgroundColor = [UIColor blueColor];
+            btn.backgroundColor = UIColorFromRGB(0x044a3ce);
             btn.titleLabel.font = [UIFont systemFontOfSize:20];
             
             [btn setTitle:@"立即体验" forState:UIControlStateNormal];

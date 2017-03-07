@@ -64,6 +64,8 @@
 		A8B3BDAB1E4DCB4E00861B81 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA21E4DCB4E00861B81 /* SDCycleScrollView.m */; };
 		A8B3BDAC1E4DCB4E00861B81 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */; };
 		A8B3BDAF1E4DCB7E00861B81 /* WebViewComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */; };
+		A8BEFD591E6E491500F5C274 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8BEFD581E6E491500F5C274 /* NetworkExtension.framework */; };
+		A8BEFD5D1E6E4F2F00F5C274 /* VPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BEFD5C1E6E4F2F00F5C274 /* VPNManager.m */; };
 		A8C5AC601E5595B700BAF4A4 /* guidepage1.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5C1E5595B700BAF4A4 /* guidepage1.png */; };
 		A8C5AC611E5595B700BAF4A4 /* guidepage2.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5D1E5595B700BAF4A4 /* guidepage2.png */; };
 		A8C5AC621E5595B700BAF4A4 /* guidepage3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C5AC5E1E5595B700BAF4A4 /* guidepage3.png */; };
@@ -237,6 +239,10 @@
 		A8B3BDA41E4DCB4E00861B81 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		A8B3BDAD1E4DCB7E00861B81 /* WebViewComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewComponent.h; sourceTree = "<group>"; };
 		A8B3BDAE1E4DCB7E00861B81 /* WebViewComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewComponent.m; sourceTree = "<group>"; };
+		A8BEFD581E6E491500F5C274 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		A8BEFD5A1E6E491500F5C274 /* schoolMould.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = schoolMould.entitlements; sourceTree = "<group>"; };
+		A8BEFD5B1E6E4F2F00F5C274 /* VPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPNManager.h; sourceTree = "<group>"; };
+		A8BEFD5C1E6E4F2F00F5C274 /* VPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPNManager.m; sourceTree = "<group>"; };
 		A8C5AC5C1E5595B700BAF4A4 /* guidepage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage1.png; sourceTree = "<group>"; };
 		A8C5AC5D1E5595B700BAF4A4 /* guidepage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage2.png; sourceTree = "<group>"; };
 		A8C5AC5E1E5595B700BAF4A4 /* guidepage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guidepage3.png; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACC547E7E72851D3B6C5CF9 /* Pods_schoolMould.framework in Frameworks */,
+				A8BEFD591E6E491500F5C274 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +363,7 @@
 		54AC2B0C9E083BEDE4505743 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8BEFD581E6E491500F5C274 /* NetworkExtension.framework */,
 				D3332B4E12A17001A5C07ABD /* Pods_schoolMould.framework */,
 			);
 			name = Frameworks;
@@ -545,10 +553,13 @@
 		A8F7A6361E499D8D00C18A14 /* schoolMould */ = {
 			isa = PBXGroup;
 			children = (
+				A8BEFD5A1E6E491500F5C274 /* schoolMould.entitlements */,
 				A8B3BD521E4DC0C200861B81 /* bundle */,
 				A8B3BD3C1E4D5E5600861B81 /* image */,
 				A8F7A6701E499DFD00C18A14 /* vendor */,
 				A8F7A6741E49A0BE00C18A14 /* configHead.h */,
+				A8BEFD5B1E6E4F2F00F5C274 /* VPNManager.h */,
+				A8BEFD5C1E6E4F2F00F5C274 /* VPNManager.m */,
 				A8C80EE11E52D99200251E49 /* errorPageView.h */,
 				A8C80EE21E52D99200251E49 /* errorPageView.m */,
 				A823B2761E514B5E00EE4FE5 /* interface.h */,
@@ -802,6 +813,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X2V7RGB29W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
 					};
 					A8F7A64C1E499D8E00C18A14 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -987,6 +1003,7 @@
 				A8B3BD881E4DCAB300861B81 /* SDWebImageDownloader.m in Sources */,
 				A8B3BD841E4DCAB300861B81 /* NSData+ImageContentType.m in Sources */,
 				A8B3BDA61E4DCB4E00861B81 /* TAAbstractDotView.m in Sources */,
+				A8BEFD5D1E6E4F2F00F5C274 /* VPNManager.m in Sources */,
 				A8F7A6391E499D8D00C18A14 /* main.m in Sources */,
 				A8B3BD5B1E4DCA3500861B81 /* AFHTTP.m in Sources */,
 				A8F7A6AF1E49A19200C18A14 /* MJRefreshHeader.m in Sources */,
@@ -1159,6 +1176,7 @@
 			baseConfigurationReference = 6AED8CC7DDFDCA2D3F4004CC /* Pods-schoolMould.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = schoolMould/schoolMould.entitlements;
 				DEVELOPMENT_TEAM = X2V7RGB29W;
 				INFOPLIST_FILE = schoolMould/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1173,6 +1191,7 @@
 			baseConfigurationReference = 6921F8678FFB7ED8C064C224 /* Pods-schoolMould.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = schoolMould/schoolMould.entitlements;
 				DEVELOPMENT_TEAM = X2V7RGB29W;
 				INFOPLIST_FILE = schoolMould/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
