@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <NetworkExtension/NetworkExtension.h>
 
-@interface VPNManager : NSObject{
-
-    BOOL _isStart;
-}
+@interface VPNManager : NSObject
 @property (nonatomic,assign)BOOL isStart;
 @property (nonatomic,strong)NEVPNManager *manager;
 

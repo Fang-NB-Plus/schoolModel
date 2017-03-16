@@ -13,6 +13,7 @@
 #import "LoginViewController.h"
 #import "MainTabbarVC.h"
 #import "IQKeyboardManager.h"
+#import "VPNManager.h"
 
 @interface AppDelegate ()
 
@@ -58,7 +59,7 @@
     
         [self guide];
     }
-        
+    
     
     return YES;
 }

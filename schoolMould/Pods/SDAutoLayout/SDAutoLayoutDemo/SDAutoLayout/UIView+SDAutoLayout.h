@@ -55,7 +55,7 @@
 
 // 如果需要用“断言”调试程序请打开此宏
 
-//#define SDDebugWithAssert
+#define SDDebugWithAssert
 
 #import <UIKit/UIKit.h>
 

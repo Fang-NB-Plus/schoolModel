@@ -16,9 +16,10 @@
 {
     UIActivityIndicatorView *_myactiveView;
     NSURLRequest            *_currentRequest;
+    UIButton                *_rightbtn;
 
 }
-
+@property (nonatomic , assign)BOOL              isLoad;
 @property (nonatomic , strong)WKWebView       * Wwebview ;
 @property (nonatomic , strong)UIBarButtonItem * rightItem;
 @property (nonatomic , strong)UIProgressView  * progressview;
@@ -51,8 +52,9 @@
     if (!_rightItem) {
         
         UIButton *cancelbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [cancelbtn setBackgroundImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
-        cancelbtn.tag = 3000;
+        cancelbtn.tag = 3001;
+        _rightbtn = cancelbtn;
+        
         [cancelbtn addTarget:self action:@selector(stopLoading:) forControlEvents:UIControlEventTouchUpInside];
         _rightItem = [[UIBarButtonItem alloc] initWithCustomView:cancelbtn];
         
@@ -91,6 +93,7 @@
     
     [self createWedview];
 //    [self createprogressview];
+
     
     
 }
@@ -208,6 +211,7 @@
         //[self.Wwebview loadHTMLString:[self readLocalHtmlString] baseURL:nil];
         [self.Wwebview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [self.Wwebview addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
+            [self.Wwebview addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
         
     }
     [self createBackBtn];
@@ -217,17 +221,17 @@
 }
 - (void)stopLoading:(UIButton *)item{
     
-    if (item.tag == 3000) {
-        item.tag = 2000;
-        [item setBackgroundImage:[UIImage imageNamed:@"reclick"] forState:UIControlStateNormal];
+    if (item.tag == 3001) {
+        item.tag = 2001;
+
         [self.activeView stopAnimating];
         [self.Wwebview stopLoading];
         if (self.Wwebview.scrollView.mj_header) {
             [self.Wwebview.scrollView.mj_header endRefreshing];
         }
     }else{
-        item.tag = 3000;
-        [item setBackgroundImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+        item.tag = 3001;
+        
         [self.Wwebview loadRequest:_currentRequest];
     
     }
@@ -259,20 +263,28 @@
     if (self.Wwebview.scrollView.mj_header) {
         [self.Wwebview.scrollView.mj_header endRefreshing];
     }
-    [self saveHtml];
+    //[self saveHtml];
         
     
    
 }
 
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
+
+
+
+}
+
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
+    if (!self.Wwebview.canGoBack) {
+        [errorPageView showinView:self.view andbuttonBlock:^{
+            //失败后按重新加载
+            [self.Wwebview loadRequest:_currentRequest];
+        }];
+    }
     
-    [errorPageView showinView:self.view andbuttonBlock:^{
-        //失败后按重新加载
-        [self.Wwebview loadRequest:_currentRequest];
-    }];
     [self.activeView stopAnimating];
     if (self.Wwebview.scrollView.mj_header) {
         [self.Wwebview.scrollView.mj_header endRefreshing];
@@ -330,6 +342,18 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     if (object == self.Wwebview) {
+        
+        if ([keyPath isEqualToString:@"loading"]) {
+            
+            NSNumber *a = change[@"new"];
+            
+            if ([a integerValue]==0) {
+                [_rightbtn setImage:[UIImage imageNamed:@"reclick"] forState:UIControlStateNormal];
+            }else{
+                [_rightbtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+            }
+            
+        }
         
         if ([keyPath isEqualToString:@"estimatedProgress"]) {
             

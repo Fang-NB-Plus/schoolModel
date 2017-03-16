@@ -74,6 +74,7 @@
 		A8C80EE51E52E08300251E49 /* errorIMG.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE41E52E08300251E49 /* errorIMG.png */; };
 		A8C80EE71E52F58200251E49 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE61E52F58200251E49 /* stop.png */; };
 		A8C80EE91E52F58B00251E49 /* reclick.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C80EE81E52F58B00251E49 /* reclick.png */; };
+		A8DA31B81E7A6DE9008494E1 /* UIButton+vertical.m in Sources */ = {isa = PBXBuildFile; fileRef = A8DA31B71E7A6DE9008494E1 /* UIButton+vertical.m */; };
 		A8F7A6391E499D8D00C18A14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A6381E499D8D00C18A14 /* main.m */; };
 		A8F7A63C1E499D8E00C18A14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63B1E499D8E00C18A14 /* AppDelegate.m */; };
 		A8F7A63F1E499D8E00C18A14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F7A63E1E499D8E00C18A14 /* ViewController.m */; };
@@ -252,6 +253,8 @@
 		A8C80EE41E52E08300251E49 /* errorIMG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errorIMG.png; sourceTree = "<group>"; };
 		A8C80EE61E52F58200251E49 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		A8C80EE81E52F58B00251E49 /* reclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reclick.png; sourceTree = "<group>"; };
+		A8DA31B61E7A6DE9008494E1 /* UIButton+vertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+vertical.h"; sourceTree = "<group>"; };
+		A8DA31B71E7A6DE9008494E1 /* UIButton+vertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+vertical.m"; sourceTree = "<group>"; };
 		A8F7A6341E499D8D00C18A14 /* schoolMould.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = schoolMould.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F7A6381E499D8D00C18A14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F7A63A1E499D8D00C18A14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 				A8F7A6741E49A0BE00C18A14 /* configHead.h */,
 				A8BEFD5B1E6E4F2F00F5C274 /* VPNManager.h */,
 				A8BEFD5C1E6E4F2F00F5C274 /* VPNManager.m */,
+				A8DA31B61E7A6DE9008494E1 /* UIButton+vertical.h */,
+				A8DA31B71E7A6DE9008494E1 /* UIButton+vertical.m */,
 				A8C80EE11E52D99200251E49 /* errorPageView.h */,
 				A8C80EE21E52D99200251E49 /* errorPageView.m */,
 				A823B2761E514B5E00EE4FE5 /* interface.h */,
@@ -959,6 +964,7 @@
 				A823B2A51E515EDC00EE4FE5 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				A8B3BD4C1E4D7F2500861B81 /* IQKeyboardManager.m in Sources */,
 				A8F7A63F1E499D8E00C18A14 /* ViewController.m in Sources */,
+				A8DA31B81E7A6DE9008494E1 /* UIButton+vertical.m in Sources */,
 				A8F7A6AE1E49A19200C18A14 /* MJRefreshFooter.m in Sources */,
 				A823B29B1E515EDC00EE4FE5 /* EXTScope.m in Sources */,
 				A8F7A6B21E49A19200C18A14 /* MJRefreshAutoStateFooter.m in Sources */,
