@@ -155,8 +155,7 @@
 }
 
 - (void)login{
-    NSString *path    = [[NSBundle mainBundle]pathForResource:@"keyWord" ofType:@"plist"];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    NSMutableDictionary *dic = GETPLIST(@"keyWord");
     
     NSDictionary *params = @{@"username":_userTF.text,@"password":[self md5:_passwordTF.text]};
     [MBProgressHUD showHUDAddedTo:self.view animated:YES].label.text = @"正在登陆...";

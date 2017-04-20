@@ -183,7 +183,10 @@
     }];
     
     if (self.Wwebview) {
-        
+        [NSTimer scheduledTimerWithTimeInterval:2.0f repeats:YES block:^(NSTimer * _Nonnull timer) {
+            
+            NSLog(@"====%f===",self.Wwebview.scrollView.contentInset.top);
+        }];
         WKWebViewConfiguration * Configuration = [[WKWebViewConfiguration alloc]init];
         WKPreferences *preferences = [WKPreferences new];
         //创建UserContentController(提供javaScript向webView发送消息的方法)
@@ -212,6 +215,7 @@
         [self.Wwebview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [self.Wwebview addObserver:self forKeyPath:@"canGoBack" options:NSKeyValueObservingOptionNew context:nil];
             [self.Wwebview addObserver:self forKeyPath:@"loading" options:NSKeyValueObservingOptionNew context:nil];
+        NSLog(@"=====%f===",self.Wwebview.scrollView.contentInset.top);
         
     }
     [self createBackBtn];
@@ -235,6 +239,8 @@
         [self.Wwebview loadRequest:_currentRequest];
     
     }
+    
+    
 
 
 }
@@ -265,7 +271,7 @@
     }
     //[self saveHtml];
         
-    
+    NSLog(@"=====%f===",self.Wwebview.scrollView.contentInset.top);
    
 }
 
@@ -289,6 +295,7 @@
     if (self.Wwebview.scrollView.mj_header) {
         [self.Wwebview.scrollView.mj_header endRefreshing];
     }
+    NSLog(@"=====%f===",self.Wwebview.scrollView.contentInset.top);
 }
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
@@ -387,7 +394,7 @@
                     [self.Wwebview loadRequest:baidurequset];
                     
                 }];
-                
+                NSLog(@"=====%f===",self.Wwebview.scrollView.contentInset.top);
                 
             }
             

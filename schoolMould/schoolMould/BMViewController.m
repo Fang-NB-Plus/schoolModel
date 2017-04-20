@@ -17,8 +17,8 @@
 
 #define LTV   @"http://www.liangtv.cn"
 #define LLURL @"https://uac.10010.com/oauth2/new_auth?display=wap&page_type=05&app_code=ECS-YH-WAP&redirect_uri=http://wap.10010.com/t/loginCallBack.htm&state=http://wap.10010.com/t/myunicom.htm&channel_code=11300000"
-#define RURL  @"http://zhlq.nnwsl.com/index.php?s=/App/Act/get_app"
-#define TURL  @"http://zhlq.nnwsl.com/index.php?s=/App/Act/banner"
+#define RURL  @"http://jgy.nnwsl.com/index.php?s=/App/Act/get_app"
+#define TURL  @"http://jgy.nnwsl.com/index.php?s=/App/Act/banner"
 @interface BMViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>{
     CGFloat _cellh;
     SDCycleScrollView *_topView;
@@ -71,7 +71,7 @@
     self.bgtableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHIGHT-40)];
     
     SDCycleScrollView *topView = [SDCycleScrollView new];
-    topView.frame  = CGRectMake(0, 0, SCREENWIDTH, SCREENWIDTH*0.8);
+    topView.frame  = CGRectMake(0, 0, SCREENWIDTH, SCREENWIDTH*0.71);
     topView.autoScroll = YES;
     topView.delegate   = self;
     
@@ -107,7 +107,7 @@
     
     NSError *parseError = nil;
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:kNilOptions|kNilOptions error:nil];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:kNilOptions|kNilOptions error:&parseError];
     NSString *responseData = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
    
@@ -121,17 +121,21 @@
     NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:@9,@"appid",@{@"devicetoken":uuid,@"did":@1,@"uid":@"",@"version":@"1.0.0"},@"data",@"",@"token", nil];
     NSString *toparams = [self dictionaryToJson:param];
     
-
+    NSString *path    = [[NSBundle mainBundle]pathForResource:@"keyWord" ofType:@"plist"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     NSLog(@"%@",toparams);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES].label.text = @"正在加载...";
-    [AFHTTP post:RURL andParams:@{@"key":toparams} ifSuccess:^(id response) {
+    [AFHTTP post:dic[@"applicationurl"] andParams:@{@"key":toparams} ifSuccess:^(id response) {
         
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [_bgtableView.mj_header endRefreshing];
         NSDictionary *dic = (NSDictionary *)response;
         if ([dic[@"status"] integerValue]==0) {
+            
             _sourceArr = dic[@"data"];
+            NSLog(@"_souceArr =---- %@ ---",_sourceArr);
+            
             
             [_bgtableView reloadData];
         }
@@ -142,7 +146,7 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [_bgtableView.mj_header endRefreshing];
     }];
-    [AFHTTP post:TURL andParams:@{@"key":toparams} ifSuccess:^(id response) {
+    [AFHTTP post:dic[@"topbannerurl"] andParams:@{@"key":toparams} ifSuccess:^(id response) {
         if ([response[@"status"] integerValue]==0) {
             NSMutableArray *myArr = [NSMutableArray new];
             NSMutableArray *picArr= [NSMutableArray new];
@@ -191,7 +195,7 @@
     }
 }
 - (CGFloat)fontsize{
-    CGFloat a;
+    
     if (isiPhone6or6s) {
         return 17;
     }
@@ -202,7 +206,7 @@
         return 18;
     }
     
-    return a;
+    return 16;
 }
 
 - (void)didReceiveMemoryWarning {

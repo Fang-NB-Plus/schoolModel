@@ -26,10 +26,10 @@ typedef void(^myblock)(NSDictionary *);
     
     NSString *const str = @"smallCell";
     smallCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
-    cell.block = myblock;
     if (!cell) {
         cell = [[smallCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
     }
+    cell.block = myblock;
     [cell resetView];
     returnblock([cell creatViewWithParams:param]);
     return cell;
@@ -90,14 +90,23 @@ typedef void(^myblock)(NSDictionary *);
     
     
     NSArray *arr   = param[@"list"];
-    
+    NSLog(@"%@",param.allKeys);
+    NSMutableDictionary *newparams = [NSMutableDictionary dictionaryWithDictionary:param];
+    if (!arr) {
+        NSString *firstTL = [param.allKeys firstObject];
+        
+        newparams[@"title"] = firstTL;
+        arr = param[firstTL];
+        
+        
+    }
     
     CGFloat length = [self itemHeight:arr.count];
     NSInteger last = [self lastNum:arr.count];
     NSInteger lnum = [self LineNum:arr.count];
     NSInteger hnum = arr.count/5+1;
     CGFloat topmargin;
-    if ((![param[@"title"]isEqualToString:@""])&&param[@"title"]){
+    if ((![newparams[@"title"]isEqualToString:@""])&&newparams[@"title"]){
         topmargin = 35;
     }else
         topmargin = 0;
@@ -131,11 +140,11 @@ typedef void(^myblock)(NSDictionary *);
         }
     }
     
-    if ((![param[@"title"]isEqualToString:@""])&&param[@"title"]) {
+    if ((![newparams[@"title"]isEqualToString:@""])&&newparams[@"title"]) {
         UILabel *baseLable = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, length+40, 30)];
         baseLable.font     = [UIFont systemFontOfSize:[self fontsize]+2];
         baseLable.textColor= [UIColor blackColor];
-        baseLable.text     = param[@"title"];
+        baseLable.text     = newparams[@"title"];
         
         UIView *lineView   = [[UIView alloc] initWithFrame:CGRectMake(10, 35, SCREENWIDTH-20, 1)];
         lineView.backgroundColor = UIColorFromRGB(0x0f2f3f5);

@@ -24,8 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *path    = [[NSBundle mainBundle]pathForResource:@"keyWord" ofType:@"plist"];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    NSMutableDictionary *dic = GETPLIST(@"keyWord");
     userModel *model = [[userManager shareManager] userModel];
     
     ASQMyShopVC *vc1 = [[ASQMyShopVC alloc] init];
